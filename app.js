@@ -79,7 +79,7 @@ For example, if the input array is [5, 8, 2, 1, 10, 10, 8], the function should 
 //     }
 //   }
 
-//   for (let i = 0; i < arr.length; i++) {
+//   for (let i = 0; i < arr.length-1; i++) {
 //     if (arr[i] >= max) {
 //       newArr.push(arr[i]);
 //     }
@@ -157,3 +157,5 @@ const countVowels = (str) => {
 };
 
 console.log(countVowels('i love watching anime'));
+
+/*Question: Write a function that takes an array of numbers as input and returns the second smallest number from the array.*/
