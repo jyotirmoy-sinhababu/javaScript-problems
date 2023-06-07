@@ -159,3 +159,30 @@ const countVowels = (str) => {
 console.log(countVowels('i love watching anime'));
 
 /*Question: Write a function that takes an array of numbers as input and returns the second smallest number from the array.*/
+
+const secondSmallestNum = (arr) => {
+  let smallest = Infinity;
+  let result = Infinity;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < smallest) {
+      smallest = arr[i];
+    }
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > smallest && arr[i] < result) {
+      result = arr[i];
+    }
+  }
+  return result;
+};
+
+console.log(secondSmallestNum([2, 7, 9, 0, 4]));
+
+/*The Fibonacci sequence is a series of numbers in which each number is the sum of the two preceding ones, usually starting with 0 and 1. The sequence goes like this: 0, 1, 1, 2, 3, 5, 8, 13, 21, and so on.
+
+Your task is to write a JavaScript function called fibonacci that takes an integer n as input and returns the nth Fibonacci number.*/
+
+const fibonacci = () => {};
+
+/*Write a JavaScript function called removeDuplicates that takes an array as input and returns a new array with all the duplicate elements removed. The order of the elements in the resulting array should be maintained. */
