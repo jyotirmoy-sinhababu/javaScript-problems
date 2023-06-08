@@ -186,3 +186,70 @@ Your task is to write a JavaScript function called fibonacci that takes an integ
 const fibonacci = () => {};
 
 /*Write a JavaScript function called removeDuplicates that takes an array as input and returns a new array with all the duplicate elements removed. The order of the elements in the resulting array should be maintained. */
+
+const removeDuplicates = (arr) => {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== arr[i + 1]) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+};
+
+console.log(removeDuplicates([1, 2, 3, 4, 5])); // Output: [1, 2, 3, 4, 5]
+console.log(removeDuplicates([1, 2, 3, 2, 4, 3])); // Output: [1, 2, 3, 4]
+console.log(removeDuplicates([5, 4, 3, 2, 1, 2])); // Output: [5, 4, 3, 2, 1]
+console.log(removeDuplicates([1, 1, 1, 1])); // Output: [1]
+
+/*Write a JavaScript function called isAnagram that takes two strings as input and returns true if the two strings are anagrams of each other, and false otherwise. Anagrams are words or phrases formed by rearranging the letters of another word or phrase. */
+
+const isAnagram = (a, b) => {
+  let firstStr = a.toLowerCase();
+  let secondStr = b.toLowerCase();
+
+  if (firstStr.length != secondStr.length) {
+    return false;
+  }
+  let firstStrSorted = firstStr.split('').sort().join();
+  let secondStrSorted = secondStr.split('').sort().join();
+
+  return firstStrSorted === secondStrSorted;
+};
+console.log(isAnagram('listen', 'silent')); // Output: true
+console.log(isAnagram('hello', 'world')); // Output: false
+console.log(isAnagram('debit card', 'bad credit')); // Output: true
+
+/*Write a function called findEvenNumbers that takes in an array of numbers and returns a new array containing only the even numbers.*/
+
+const findEvenNumbers = (arr) => {
+  let newArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 0) {
+      return false;
+    }
+    if (arr[i] % 2 === 0) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+};
+
+console.log(findEvenNumbers([1, 2, 4, 5, 6, 8]));
+
+/*Write a function called calculateAverage that takes in an array of numbers and returns the average of those numbers.*/
+
+const calculateAverage = (arr) => {
+  let sum = 0;
+  let avg = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+    avg = sum / arr.length;
+  }
+  return avg;
+};
+console.log(calculateAverage([1, 2, 3, 4, 5])); // Output: 3
+console.log(calculateAverage([10, 20, 30, 40, 50])); // Output: 30
+console.log(calculateAverage([2, 4, 6, 8, 10])); // Output: 6
+console.log(calculateAverage([])); // Output: 0 (assuming 0 as the average of an empty array)
