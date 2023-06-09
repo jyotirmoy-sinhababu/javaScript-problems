@@ -253,3 +253,27 @@ console.log(calculateAverage([1, 2, 3, 4, 5])); // Output: 3
 console.log(calculateAverage([10, 20, 30, 40, 50])); // Output: 30
 console.log(calculateAverage([2, 4, 6, 8, 10])); // Output: 6
 console.log(calculateAverage([])); // Output: 0 (assuming 0 as the average of an empty array)
+
+/*Write a function called findMissingNumber that takes an array of numbers from 1 to N (inclusive), with one number missing, and returns the missing number. The array is guaranteed to have unique numbers, except for the missing number. */
+
+const findMissingNumber = (arr) => {
+  //length of the original array with one missing number
+  const n = arr.length + 1;
+  //sum total of numbers from 1 to N
+  const sumTotal = (n * (n + 1)) / 2;
+  // sum of all the contents of array
+  let sum = 0;
+  for (i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+
+  let missingNum = sumTotal - sum;
+  return missingNum;
+};
+
+console.log(findMissingNumber([1, 2, 4, 5, 6])); // Output: 3
+console.log(findMissingNumber([1, 3, 4, 5, 6])); // Output: 2
+console.log(findMissingNumber([2, 3, 4, 5, 6])); // Output: 1
+console.log(findMissingNumber([1, 2, 3, 4, 6])); // Output: 5
+console.log(findMissingNumber([1, 3, 5, 7, 9, 11])); // Output: 2
+console.log(findMissingNumber([10, 8, 7, 6, 5, 4, 3, 2, 1])); // Output: 9
