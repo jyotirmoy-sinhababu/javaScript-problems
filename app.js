@@ -307,3 +307,30 @@ const findMaxDifference = (arr) => {
 
 console.log(findMaxDifference([12, 1, 9, 10, 8]));
 console.log(findMaxDifference([11, 1, 9, 10, 8, 7]));
+
+/*Question: Given an array of integers, write a function called findPairs that finds all pairs of numbers in the array whose sum is equal to a given target value. The function should return an array of arrays, where each sub-array represents a pair of numbers.
+
+Example:
+
+Input:
+Array: [2, 4, 6, 3, 5, 1]
+Target: 7
+
+Output: [[2, 5], [4, 3], [6, 1]]
+
+In the given example, the pairs [2, 5], [4, 3], and [6, 1] have a sum equal to the target value of 7.
+
+Try to come up with an efficient solution with a time complexity better than O(n^2), where n is the size of the input array. Good luck! */
+
+const findPairs = (arr, target) => {
+  let pairs = [];
+  for (let i = 0; i < arr.length - 1; i++) {
+    let num = target - arr[i];
+    if (arr.includes(num) && arr[i] !== num) {
+      pairs.push([arr[i], num]);
+    }
+  }
+  return pairs;
+};
+
+console.log(findPairs([2, 4, 6, 3, 5, 1], 6));
