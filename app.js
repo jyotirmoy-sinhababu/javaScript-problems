@@ -277,3 +277,33 @@ console.log(findMissingNumber([2, 3, 4, 5, 6])); // Output: 1
 console.log(findMissingNumber([1, 2, 3, 4, 6])); // Output: 5
 console.log(findMissingNumber([1, 3, 5, 7, 9, 11])); // Output: 2
 console.log(findMissingNumber([10, 8, 7, 6, 5, 4, 3, 2, 1])); // Output: 9
+
+/*
+
+Question: Given an array of integers, write a function called findMaxDifference that finds the maximum difference between any two elements in the array and returns that difference.
+
+Example:
+
+Input: [2, 9, 5, 1, 7, 4, 6]
+Output: 8
+
+In the given example, the maximum difference is achieved by subtracting the smallest element (1) from the largest element (9), resulting in 8.
+
+Try to come up with an efficient solution with a time complexity better than O(n^2), where n is the size of the input array. Good luck! */
+
+const findMaxDifference = (arr) => {
+  let max = -Infinity;
+  let min = Infinity;
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+  }
+  return max - min;
+};
+
+console.log(findMaxDifference([12, 1, 9, 10, 8]));
+console.log(findMaxDifference([11, 1, 9, 10, 8, 7]));
